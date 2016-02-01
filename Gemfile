@@ -13,6 +13,7 @@ gem 'carrierwave'
 gem 'net-ssh'
 gem 'fog'
 gem 'figaro'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
