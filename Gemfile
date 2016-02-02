@@ -14,6 +14,7 @@ gem 'net-ssh'
 gem 'fog'
 gem 'figaro'
 gem 'mini_magick'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
