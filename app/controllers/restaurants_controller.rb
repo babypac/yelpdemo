@@ -10,9 +10,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @reviews = Review.where(restaurant_id: @restaurant.id)
   end
 
-  # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
   end
@@ -21,8 +21,6 @@ class RestaurantsController < ApplicationController
   def edit
   end
 
-  # POST /restaurants
-  # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
