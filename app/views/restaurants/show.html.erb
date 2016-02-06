@@ -32,9 +32,22 @@
       <h3>리뷰가 없어요. 처음으로 리뷰를 써 보세요!</h3>
     <% else %>
         <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-3"></th>
+              <th class="col-md-9"></th>
+            </tr>
+          </thead>
+
           <tbody>
             <% @reviews.each do |review| %>
             <tr>
+              <td>
+                <h4>
+                  <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+                </h4>
+                <p><%= review.created_at.strftime("%Y년 %-m월%-d일%l시") %></p>
+              </td>
               <td>
                 <div class="star-rating" data-score= "<%= review.rating %>"></div>
                 <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
